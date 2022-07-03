@@ -28,14 +28,20 @@ work.
 4. run `PackerInstall` command in nvim
 
 ## Alias 
+A bunch of regular mapping that I use regularly on all systems
+
 ```{bash}
+
   alias c="$HOME/Projects/dotconfig/code.sh"
   alias cc="code"
   alias prjt="cd $HOME/Projects"
+  alias jp='python3 -m json.tool'
+  alias cwa='$HOME/Projects/connect-adb-wireless.sh'
 
   decode_proto(){ echo $1 | xxd -r -p | protoc --decode_raw; };
   decode_proto_gzip(){ echo $1 | xxd -r -p | gzip -d | protoc --decode_raw; };
 
   alias pd="decode_proto"
   alias pdz="decode_proto_gzip"
+
 ```

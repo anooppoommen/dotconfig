@@ -14,8 +14,13 @@ M.ui = {
    theme_toggle = { "onedark", "one_light", "rxyhn" },
 }
 
+
+
+
+
 -- set highight color
-vim.cmd [[highlight IndentBlankline ctermfg=yellow guifg=#E5C07B gui=nocombine]]
+vim.cmd [[ highlight IndentBlankline ctermfg=yellow guifg=#E5C07B gui=nocombine ]]
+vim.cmd [[ set autoread | au CursorHold * checktime | call feedkeys("lh") ]]
 
 vim.opt.list = true
 vim.opt.listchars:append("space:⋅")
@@ -99,9 +104,14 @@ M.mappings =  {
       ['<A-Right>'] = { ':vertical resize -3<CR>', "Resize vertical window" },
       ['<A-Up>'] = { ':resize +3<CR>', "Resize horizontal window" },
       ['<A-Down>'] = { ':resize -3<CR>', "Resize horizontal window" },
-    }
+      ['<leader>ss'] = { ":lua require('custom.session').load_session()<CR><CR>", "Load last saved session"},
+     }
   }
 }
+
+-- Auot session stuff
+require("custom.session").setup()
+
 
 return M
 
