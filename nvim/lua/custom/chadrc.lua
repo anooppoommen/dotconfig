@@ -20,7 +20,9 @@ M.ui = {
 
 -- set highight color
 vim.cmd [[ highlight IndentBlankline ctermfg=yellow guifg=#E5C07B gui=nocombine ]]
-vim.cmd [[ set autoread | au CursorHold * checktime | call feedkeys("lh") ]]
+-- abandoing this as it could be performance issue will check this later
+-- vim.cmd [[ set autoread | au CursorHold * checktime | call feedkeys("lh") ]]
+
 
 vim.opt.list = true
 vim.opt.listchars:append("space:⋅")

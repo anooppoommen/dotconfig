@@ -35,6 +35,16 @@ end
 function M.load_session()
   local session_name = get_session_name()
   session_name = vim.g.session_dir .. "/" .. session_name
+
+  -- check if file exists
+  local f=io.open(session_name,"r")
+  if f == nil then
+    info("No sesion file found")
+    return
+  else
+    io.close(f)
+  end
+
   local cmd = "source " .. session_name
   vim.cmd(cmd)
   info("Loadded session " .. session_name)
