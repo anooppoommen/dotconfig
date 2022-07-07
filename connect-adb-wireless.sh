@@ -1,8 +1,8 @@
 #!/bin/bash
 
 if [ "$#" -ne 1 ]; then
-  echo "Invalid usage cwa <ip>"
-  exit 1
+	echo "Invalid usage cwa <ip>"
+	exit 1
 fi
 
 ip=$1
