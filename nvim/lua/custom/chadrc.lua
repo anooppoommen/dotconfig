@@ -14,36 +14,12 @@ M.ui = {
    theme_toggle = { "onedark", "one_light", "rxyhn" },
 }
 
--- TODO: Move this to a helper script
-local function list(value, str, sep)
-  sep = sep or ","
-  str = str or ""
-  value = type(value) == "table" and table.concat(value, sep) or value
-  return str ~= "" and table.concat({value, str}, sep) or value
-end
+
 
 -- set highight color
 vim.cmd [[ highlight IndentBlankline ctermfg=yellow guifg=#E5C07B gui=nocombine ]]
 -- abandoing this as it could be performance issue will check this later
 -- vim.cmd [[ set autoread | au CursorHold * checktime | call feedkeys("lh") ]]
-
-
-vim.opt.list = true
-vim.opt.listchars:append("space:⋅")
-vim.opt.listchars:append("eol:↴")
-
-
--- git color and style configs
-vim.opt.fillchars = list {
-  -- "vert:▏",
-  "vert:│",
-  "diff:╱",
-  "foldclose:",
-  "foldopen:",
-  "eob: "
-
-}
--- opt.fillchars = { eob = " " }
 
 
 local hl = require("custom.hl");
