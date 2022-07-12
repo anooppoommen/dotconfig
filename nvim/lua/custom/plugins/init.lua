@@ -17,5 +17,11 @@ return {
     config = function ()
       require("neoscroll").setup()
     end
+  },
+  ["folke/trouble.nvim"] = {
+    requires = "kyazdani42/nvim-web-devicons",
+    config = function()
+      require("trouble").setup {}
+    end
   }
 }
